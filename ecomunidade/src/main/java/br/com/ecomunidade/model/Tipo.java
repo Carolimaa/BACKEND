@@ -21,12 +21,11 @@ public class Tipo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;
 	
-	@NotNull
-	@NotBlank
+	@NotBlank(message = "O atributo nome é Obrigatório!")
 	@Column(length = 50)
 	private String nome;
 	
-	@NotNull
+	@NotNull(message = "O atributo descrição é Obrigatório!")
 	@Column(length = 150)
 	private String descricao;
 	

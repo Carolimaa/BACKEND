@@ -44,7 +44,7 @@ public class TipoController {
 	
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Tipo>> getByNome(@PathVariable String nome){
-		return ResponseEntity.ok(tipoRepository.findAllByNomeIgnoreCase(nome));
+		return ResponseEntity.ok(tipoRepository.findAllByNomeContainingIgnoreCase(nome));
 		
 	}
 	

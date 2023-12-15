@@ -9,6 +9,6 @@ import br.com.ecomunidade.model.Tipo;
 
 public interface TipoRepository extends JpaRepository<Tipo, Long> {
 	
-	List<Tipo> findAllByNomeIgnoreCase(@Param("nome") String nome);
+	List<Tipo> findAllByNomeContainingIgnoreCase(@Param("nome") String nome);
 
 }

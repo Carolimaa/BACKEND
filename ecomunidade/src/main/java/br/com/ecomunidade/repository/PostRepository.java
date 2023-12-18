@@ -9,6 +9,6 @@ import br.com.ecomunidade.model.Post;
 
 public interface PostRepository extends JpaRepository<Post, Long>{
 	
-	List<Post> findAllbyConteudoContainingIgnoreCase(@Param("conteudo") String conteudo);
+	List<Post> findAllByConteudoContainingIgnoreCase(@Param("conteudo") String conteudo);
 
 }

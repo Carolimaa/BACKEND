@@ -30,8 +30,10 @@ public class Post {
 	@Column(length = 1000)
 	private String conteudo;
 
+	@Column(length = 200)
 	private String localidade;
 
+	@Column(length = 1000)
 	private String foto;
 
 	@ManyToOne

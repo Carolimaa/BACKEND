@@ -1,14 +1,20 @@
 package br.com.ecomunidade.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -31,6 +37,10 @@ public class Tipo {
 	
 	@UpdateTimestamp
 	private LocalDateTime data;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tipo", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("tipo")
+	private List<Post> post;
 
 	public Long getId() {
 		return id;
@@ -62,6 +72,14 @@ public class Tipo {
 
 	public void setData(LocalDateTime data) {
 		this.data = data;
+	}
+
+	public List<Post> getPost() {
+		return post;
+	}
+
+	public void setPost(List<Post> post) {
+		this.post = post;
 	}
 	
 	

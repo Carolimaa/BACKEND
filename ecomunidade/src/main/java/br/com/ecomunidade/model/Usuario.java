@@ -59,9 +59,9 @@ public class Usuario {
 	private LocalDate data_nascimento;
 	
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("usuario")
-	private List<Post> post;
+	//@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
+	//@JsonIgnoreProperties("usuario")
+	//private List<Post> post;
 
 	public LocalDate getData_nascimento() {
 		return data_nascimento;
@@ -127,13 +127,13 @@ public class Usuario {
 		this.contato = contato;
 	}
 
-	public List<Post> getPost() {
-		return post;
-	}
+	//public List<Post> getPost() {
+		//return post;
+	//}
 
-	public void setPost(List<Post> post) {
-		this.post = post;
-	}
+	//public void setPost(List<Post> post) {
+		//this.post = post;
+	//}
 	
 	
 	

@@ -40,9 +40,9 @@ public class Post {
 	@JsonIgnoreProperties("post")
 	private Tipo tipo;
 
-	//@ManyToOne
-	//@JsonIgnoreProperties("post")
-	//private Usuario usuario;
+	@ManyToOne
+	@JsonIgnoreProperties("post")
+	private Usuario usuario;
 
 	public Long getId() {
 		return id;
@@ -92,12 +92,12 @@ public class Post {
 		this.tipo = tipo;
 	}
 
-	//public Usuario getUsuario() {
-		//return usuario;
-	//}
+	public Usuario getUsuario() {
+		return usuario;
+	}
 
-	//public void setUsuario(Usuario usuario) {
-		//this.usuario = usuario;
-	//}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 }

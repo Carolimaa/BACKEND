@@ -2,16 +2,19 @@ package br.com.ecomunidade.service;
 
 import java.util.Optional;
 
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import br.com.ecomunidade.model.Usuario;
 import br.com.ecomunidade.model.UsuarioLogin;
 import br.com.ecomunidade.repository.UsuarioRepository;
-
+import br.com.ecomunidade.security.JwtService;
 
 @Service
 public class UsuarioService {

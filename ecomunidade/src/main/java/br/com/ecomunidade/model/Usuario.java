@@ -6,6 +6,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,6 +33,7 @@ public class Usuario {
 	@Column(length = 100)
 	private String nome;
 
+	@Schema(example = "email@email.com.br")
 	@NotBlank(message = "O atributo email é Obrigatório!")
 	@Size(max = 100, message = "O atributo email deve conter no mínimo 10 e no máximo 100 caracteres")
 	@Email(message = "Informe um endereço de e-mail válido") // perguntar yuri
@@ -62,6 +64,8 @@ public class Usuario {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Post> post;
+	
+	
 
 	public LocalDate getData_nascimento() {
 		return data_nascimento;

@@ -57,7 +57,6 @@ public class Usuario {
 	private String contato;
 	
 	@Past(message = "A data de nascimento deve estar no passado")
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	private LocalDate data_nascimento;
 	
 	
